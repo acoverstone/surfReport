@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ 	<h1>{{report.location}} <small>Extended Forecast</small></h1>
+
+
+	{% for temp in data %}
+		<p>{{temp.timestamp}}</p>
+		<!-- <p>{{temp.swell.components.combined.height}}</p> -->
+	{% endfor %}
+
+
+
+{% endblock %}

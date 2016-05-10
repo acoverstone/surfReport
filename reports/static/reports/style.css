@@ -35,3 +35,606 @@ h1 {
 	margin-left: 45px;
 }
 
+
+span {
+	position: absolute;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ******************************************************************************** */
+
+
+
+.wa-10 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px 0px;
+}
+
+.wa-100 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -52px;
+}
+
+.wa-105 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -104px;
+}
+
+.wa-110 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -156px;
+}
+
+.wa-115 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -208px;
+}
+
+.wa-120 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -260px;
+}
+
+.wa-125 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -312px;
+}
+
+.wa-130 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -364px;
+}
+
+.wa-135 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -416px;
+}
+
+.wa-140 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -468px;
+}
+
+.wa-145 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -520px;
+}
+
+.wa-15 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -572px;
+}
+
+.wa-150 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -624px;
+}
+
+.wa-155 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -676px;
+}
+
+.wa-160 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -728px;
+}
+
+.wa-165 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -780px;
+}
+
+.wa-170 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -832px;
+}
+
+.wa-175 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -884px;
+}
+
+.wa-180 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -936px;
+}
+
+.wa-185 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -988px;
+}
+
+.wa-190 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1040px;
+}
+
+.wa-195 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1092px;
+}
+
+.wa-20 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1144px;
+}
+
+.wa-200 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1196px;
+}
+
+.wa-205 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1248px;
+}
+
+.wa-210 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1300px;
+}
+
+.wa-215 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1352px;
+}
+
+.wa-220 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1404px;
+}
+
+.wa-225 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1456px;
+}
+
+.wa-230 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1508px;
+}
+
+.wa-235 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1560px;
+}
+
+.wa-240 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1612px;
+}
+
+.wa-245 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1664px;
+}
+
+.wa-25 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1716px;
+}
+
+.wa-250 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1768px;
+}
+
+.wa-255 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1820px;
+}
+
+.wa-260 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1872px;
+}
+
+.wa-265 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") 0px -1924px;
+}
+
+.wa-270 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px 0px;
+}
+
+.wa-275 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -52px;
+}
+
+.wa-280 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -104px;
+}
+
+.wa-285 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -156px;
+}
+
+.wa-290 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -208px;
+}
+
+.wa-295 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -260px;
+}
+
+.wa-30 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -312px;
+}
+
+.wa-300 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -364px;
+}
+
+.wa-305 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -416px;
+}
+
+.wa-310 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -468px;
+}
+
+.wa-315 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -520px;
+}
+
+.wa-320 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -572px;
+}
+
+.wa-325 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -624px;
+}
+
+.wa-330 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -676px;
+}
+
+.wa-335 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -728px;
+}
+
+.wa-340 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -780px;
+}
+
+.wa-345 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -832px;
+}
+
+.wa-35 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -884px;
+}
+
+.wa-350 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -936px;
+}
+
+.wa-355 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -988px;
+}
+
+.wa-360 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1040px;
+}
+
+.wa-40 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1092px;
+}
+
+.wa-45 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1144px;
+}
+
+.wa-5 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1196px;
+}
+
+.wa-50 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1248px;
+}
+
+.wa-55 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1300px;
+}
+
+.wa-60 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1352px;
+}
+
+.wa-65 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1404px;
+}
+
+.wa-70 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1456px;
+}
+
+
+.wa-75 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1508px;
+}
+
+.wa-80 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1560px;
+}
+
+.wa-85 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1612px;
+}
+
+.wa-90 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1664px;
+}
+
+.wa-95 {
+	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1716px;
+}
+

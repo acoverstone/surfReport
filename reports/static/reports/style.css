@@ -1,3 +1,37 @@
-li a {
-	color: green;
+li, li a {
+	transition: color .4s;
+	color: #5F646E;
+	text-decoration: none;
+	list-style-type: none;
+}  
+
+li a:hover {
+	color: #7A88A1;
+	text-decoration: none;
+	font-size: 105%;
+} 
+
+h3 {
+	margin-left: 30px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #4A4B58;
 }
+
+h6 {
+	color: #4A4B58;
+	margin-left: 170px;
+}
+
+h1 {
+	text-align: center;
+	color: #4A4B58;
+	margin:7px;
+}
+
+.times {
+	color: #6F736E;
+	margin-left: 45px;
+}
+

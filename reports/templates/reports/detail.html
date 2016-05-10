@@ -1,15 +1,27 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 
+	<!-- Start of content -->
  	<h1>{{report.location}} <small>Extended Forecast</small></h1>
+ 	<br>
 
 
-	{% for temp in data %}
-		<p>{{temp.timestamp}}</p>
-		<!-- <p>{{temp.swell.components.combined.height}}</p> -->
-	{% endfor %}
+	<div id="graphs"></div>
+	
+
+	<div id="daybyday"></div>
 
 
+
+
+
+	<script type="text/javascript">
+			var data = JSON.parse('{{data | escapejs}}');
+	</script>
+	<script src="{% static 'reports/jquery.js' %}"></script>
+	<script src="{% static 'reports/script.js' %}"></script>
 
 {% endblock %}
+

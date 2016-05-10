@@ -3,11 +3,17 @@
 {% block content %}
 
 	{% if spot_list %}
+
+	<div>
+		<h3>United States</h3>
 		<ul>
 		{% for spot in spot_list %}
 			<li><a href="{% url 'reports:detail' spot.spot_id %}">{{ spot.location }}</a></li>
 		{% endfor %}
 		</ul> 
+  </div>
+
+
 	{% else %}
 		<p>No reports are available.</p>
 	{% endif %}

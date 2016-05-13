@@ -1,3 +1,5 @@
+// This file handles parsing of JSON for wave and tide data
+
 // Global variables
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -36,11 +38,13 @@ for(var i = 0; i < data.length; i++){
 for(var i = 0; i < 5; i ++){
 
 	var dayReport = $('.dayReport' + i);
+	var tideDate;
 	
 	for(var j = 0; j < 8; j++){
 
 		// Add timestamps
 		var date = new Date((data[j + i * 8]['localTimestamp'] + 14400) * 1000);
+		tideDate = date;
 		var time = document.createElement('p');
 		time.innerHTML = date.toLocaleTimeString();
 		time.classList.add('times');
@@ -81,6 +85,7 @@ for(var i = 0; i < 5; i ++){
 
 		// Enter data
 		var swell = document.createElement('h6');
+		swell.classList.add('details');
 
 		if(data[j + i * 8]['swell']['minBreakingHeight'] != data[j + i * 8]['swell']['maxBreakingHeight'])
 			swell.innerHTML = 'Waves: ' + data[j + i * 8]['swell']['minBreakingHeight'] + '-' + 
@@ -105,17 +110,69 @@ for(var i = 0; i < 5; i ++){
 
 
 
-
-
-
-
-
 		$(dayReport).append(swell);
 
 
 
 
 	}
+
+	// Add tide information
+	var tideinfo = document.createElement('p');
+	tideinfo.classList.add('times');
+	tideinfo.innerHTML = 'Tides'
+	$(dayReport).append(tideinfo);
+
+	var lowhigh = document.createElement('h6');
+	lowhigh.classList.add('details');
+
+
+	// find date of i (each day)
+	// find highs and lows and fill them in
+	var tidelist = [];
+	var low1 = '';
+	var low2 = '';
+	var high1 = '';
+	var high2 = '';
+
+	tideDate = tideDate.getUTCDate() - 1;
+
+	for(var j = 0; j < tides['response'][0]['periods'].length; j++){
+		var tempDate = new Date(tides['response'][0]['periods'][j]['timestamp'] * 1000);
+		if(tideDate == tempDate.getUTCDate()){
+			tidelist.push(tides['response'][0]['periods'][j]);
+		}
+	}
+
+	console.log(tidelist);
+
+
+	for(var j = 0; j < tidelist.length; j++){
+		if(tidelist[j]['type'] == 'l'){
+			if(!low1)
+				low1 = new Date(tidelist[j]['timestamp'] * 1000);
+			if(low1)
+				low2 = new Date(tidelist[j]['timestamp'] * 1000);
+		}
+		else if(tidelist[j]['type'] == 'h'){
+			if(!high1)
+				high1 = new Date(tidelist[j]['timestamp'] * 1000);
+			if(low1)
+				high2 = new Date(tidelist[j]['timestamp'] * 1000);
+		}
+	}
+
+
+
+	lowhigh.innerHTML = 'Low: ' + low1.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
+	'High: ' + high1.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' +
+	'Low: ' + low2.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
+	'High: ' + high2.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
+
+
+
+	$(dayReport).append(lowhigh);
+
 }
 
 

@@ -19,7 +19,7 @@ h3 {
 	color: #4A4B58;
 }
 
-h6 {
+.details {
 	color: #4A4B58;
 	margin-left: 170px;
 }
@@ -40,9 +40,6 @@ span {
 	position: absolute;
 
 }
-
-
-
 
 
 

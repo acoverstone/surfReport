@@ -5,6 +5,7 @@ class Report(models.Model):
 	country = models.CharField(max_length = 40)
 	region = models.CharField(max_length = 40)
 	location = models.CharField(max_length = 40)
+	lat_long = models.CharField(max_length = 40, default = '')
 
 	def __str__(self):
 		return self.location

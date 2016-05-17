@@ -1,7 +1,55 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from .models import Report
 import requests, datetime, json
+
+
+def home(request):
+	return render(request, 'reports/home.html')
+
+def success(request):
+	return render(request, 'registration/success.html')
+
+def failure(request):
+	return render(request, 'registration/failure.html')
+
+def auth_login(request):
+
+	if request.POST:
+		username = request.POST['username']
+		password = request.POST['password']
+
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			login(request, user)
+			return HttpResponseRedirect('/')
+		else:
+			# Somehow include error message about login unsuccessful
+			return HttpResponseRedirect('/accounts/failure')		
+
+	return render(request, 'registration/login.html')
+
+def register(request):
+	if request.POST:
+		username = request.POST['username']
+		email = request.POST['email']
+		password = request.POST['password']
+		password_confirm = request.POST['password_confirm']
+
+		if password != password_confirm:
+			return HttpResponseRedirect('/accounts/failure')
+
+		user = User.objects.create_user(username, email, password)
+		user.save()
+
+		if user is not None:
+			return HttpResponseRedirect('/accounts/success')
+		else:
+			return HttpResponseRedirect('/accounts/failure')
+
+	return render(request, 'registration/register.html')
 
 
 def index(request):

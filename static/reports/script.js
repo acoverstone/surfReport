@@ -126,9 +126,6 @@ for(var i = 0; i < 5; i ++){
 	var lowhigh = document.createElement('h6');
 	lowhigh.classList.add('details');
 
-
-	// find date of i (each day)
-	// find highs and lows and fill them in
 	var tidelist = [];
 	var low1 = '';
 	var low2 = '';
@@ -160,6 +157,27 @@ for(var i = 0; i < 5; i ++){
 			if(low1)
 				high2 = new Date(tidelist[j]['timestamp'] * 1000);
 		}
+	}
+
+	// catch errors if there is no low2 or high2
+	if(low2 == ''){
+		low2 = low1;
+	}  
+	if(high2 == ''){
+		high2 = high1;
+	}
+
+	// Make sure AM appears first
+	if(low1.getHours() >= 12){
+		var temp = low1;
+		low1 = low2;
+		low2 = temp;
+	}
+
+	if(high1.getHours() >= 12){
+		var temp = high1;
+		high1 = high2;
+		high2 = temp;
 	}
 
 

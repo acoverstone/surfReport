@@ -11,11 +11,11 @@ li a:hover {
 	font-size: 105%;
 } 
 
-h3 {
+h3, h2 {
 	margin-left: 30px;
 	margin-right: 10px;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 17px;
 	color: #4A4B58;
 }
 
@@ -41,10 +41,16 @@ span {
 
 }
 
+form {
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
 
-
-
+.loggedOut {
+    text-align: center;
+    color: #4A4B58;
+}
 
 
 

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% if not user.is_authenticated %}
+
+<div class="loggedOut">
+	<p> You can <a href="/accounts/login" class="btn btn-default">Log In</a> or <a href="/accounts/register" class="btn btn-primary">Sign Up</a> to try out the site.</p>
+</div>
+
+{% else %}
+
+
+	<h1>Hello {{ user.username }}.<h1>
+
+
+{% endif %} 
+
+
+{% endblock %}

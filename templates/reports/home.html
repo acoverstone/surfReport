@@ -1,21 +1,35 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 
 
 {% if not user.is_authenticated %}
 
-<div class="loggedOut">
-	<p> You can <a href="/accounts/login" class="btn btn-default">Log In</a> or <a href="/accounts/register" class="btn btn-primary">Sign Up</a> to try out the site.</p>
-</div>
+	<div class="loggedOut">
+		<p> You can <a href="/accounts/login" class="btn btn-default">Log In</a> or <a href="/accounts/register" class="btn btn-primary">Sign Up</a> to try out the site.</p>
+	</div>
 
 {% else %}
 
+	{% if reports|length > 0 %}
 
-	<h1>Hello {{ user.username }}.<h1>
+		<h1>Your Surf Reports <small> For Today</small></h1>
+		<br>
 
+		<div id="spotbyspot"></div>
+	{% else %}
+		<h3 class="loggedOut">You have no favorite reports yet.</h3>
+	{% endif %}
 
 {% endif %} 
+
+	<script type="text/javascript">
+		var names = {{names | safe}};
+		var reports = {{reports}};
+	</script>
+	<script src="{% static 'reports/jquery.js' %}"></script>
+	<script src="{% static 'reports/homeScript.js' %}"></script>
 
 
 {% endblock %}

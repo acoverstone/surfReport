@@ -1,12 +1,12 @@
-li, li a {
+li, li a, a {
 	transition: color .4s;
 	color: #5F646E;
 	text-decoration: none;
 	list-style-type: none;
 }  
 
-li a:hover {
-	color: #7A88A1;
+li a:hover, a:hover {
+	color: #8A919A;
 	text-decoration: none;
 	font-size: 105%;
 } 
@@ -53,10 +53,25 @@ form {
 }
 
 
+#favoriteButton {
+    position: absolute;
+    right: 60px;
+    top: 80px;
+}
 
+.spotDiv {
+    margin: auto;
+    border: 2px solid #5F646E;
+    border-radius: 10px;
+    padding: 5px;
+    width: 90%;
+}
 
-
-
+.homeDetail {
+    color: #4A4B58;
+    font-size: 90%;
+    margin-top: 3px;
+}
 
 
 
@@ -530,6 +545,14 @@ form {
 
 .wa-360 {
 	margin-top: -6px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("wind.png") -52px -1040px;
+}
+
+.wa-0 {
+    margin-top: -6px;
     display: inline-block;
     width: 26px;
     height: 26px;

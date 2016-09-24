@@ -34,6 +34,11 @@ for(var i = 0; i < data.length; i++){
 	}
 }
 
+
+
+
+
+
 // Populate days with information and format text
 for(var i = 0; i < 5; i ++){
 
@@ -58,7 +63,7 @@ for(var i = 0; i < 5; i ++){
 			rating.push('<img src="http://cdnimages.magicseaweed.com/star_filled.png" />');
 		}
 
-		for(var k = 0; k < data[j + i * 8]['solidRating']; k++){
+		for(var k = 0; k < data[j + i * 8]['fadedRating']; k++){
 			rating.push('<img src="http://cdnimages.magicseaweed.com/star_empty.png" />');		
 		}
 
@@ -75,7 +80,7 @@ for(var i = 0; i < 5; i ++){
 
 		for(var k = 0; k < 365; k += 5){
 			if(data[j + i * 8]['wind']['direction'] >= k && data[j + i * 8]['wind']['direction'] < k + 5)
-				if(data[j + i * 8]['wind']['direction'] < 180)
+				if(data[j + i * 8]['wind']['direction'] <= 180)
 					temp2 = "<span class='wa-" +  (k + 180).toString() + "'></span>";
 				else
 					temp2 = "<span class='wa-" +  (k - 180).toString() + "'></span>";
@@ -105,17 +110,22 @@ for(var i = 0; i < 5; i ++){
 				'<span>' + 'Wind: ' + data[j + i * 8]['wind']['speed'] + ' mph' + '</span>' +
 				'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
 				temp2 + ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@ &nbsp;&nbsp;' +
-				data[j + i * 8]['condition']['temperature'] + '&#8457';;
+				data[j + i * 8]['condition']['temperature'] + '&#8457';
 
 
 
 
 		$(dayReport).append(swell);
 
-
-
-
 	}
+
+
+
+
+
+
+
+
 
 	// Add tide information
 	var tideinfo = document.createElement('p');
@@ -141,56 +151,56 @@ for(var i = 0; i < 5; i ++){
 		}
 	}
 
-	console.log(tidelist);
+	// console.log(tidelist);
 
-
-	for(var j = 0; j < tidelist.length; j++){
-		if(tidelist[j]['type'] == 'l'){
-			if(!low1)
-				low1 = new Date(tidelist[j]['timestamp'] * 1000);
-			if(low1)
-				low2 = new Date(tidelist[j]['timestamp'] * 1000);
+	if(tidelist.length >= 2){
+		for(var j = 0; j < tidelist.length; j++){
+			if(tidelist[j]['type'] == 'l'){
+				if(!low1)
+					low1 = new Date(tidelist[j]['timestamp'] * 1000);
+				if(low1)
+					low2 = new Date(tidelist[j]['timestamp'] * 1000);
+			}
+			else if(tidelist[j]['type'] == 'h'){
+				if(!high1)
+					high1 = new Date(tidelist[j]['timestamp'] * 1000);
+				if(low1)
+					high2 = new Date(tidelist[j]['timestamp'] * 1000);
+			}
 		}
-		else if(tidelist[j]['type'] == 'h'){
-			if(!high1)
-				high1 = new Date(tidelist[j]['timestamp'] * 1000);
-			if(low1)
-				high2 = new Date(tidelist[j]['timestamp'] * 1000);
+
+		// catch errors if there is no low2 or high2
+		if(low2 == ''){
+			low2 = low1;
+		}  
+		if(high2 == ''){
+			high2 = high1;
 		}
+
+		// Make sure AM appears first
+		if(low1.getHours() >= 12){
+			var temp = low1;
+			low1 = low2;
+			low2 = temp;
+		}
+
+		if(high1.getHours() >= 12){
+			var temp = high1;
+			high1 = high2;
+			high2 = temp;
+		}
+
+
+
+		lowhigh.innerHTML = 'Low: ' + low1.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
+		'High: ' + high1.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' +
+		'Low: ' + low2.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
+		'High: ' + high2.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
+
+
+
+		$(dayReport).append(lowhigh);
 	}
-
-	// catch errors if there is no low2 or high2
-	if(low2 == ''){
-		low2 = low1;
-	}  
-	if(high2 == ''){
-		high2 = high1;
-	}
-
-	// Make sure AM appears first
-	if(low1.getHours() >= 12){
-		var temp = low1;
-		low1 = low2;
-		low2 = temp;
-	}
-
-	if(high1.getHours() >= 12){
-		var temp = high1;
-		high1 = high2;
-		high2 = temp;
-	}
-
-
-
-	lowhigh.innerHTML = 'Low: ' + low1.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
-	'High: ' + high1.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' +
-	'Low: ' + low2.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;' + 
-	'High: ' + high2.toLocaleTimeString() + '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;';
-
-
-
-	$(dayReport).append(lowhigh);
-
 }
 
 
@@ -198,6 +208,19 @@ for(var i = 0; i < 5; i ++){
 
 
 
+
+
+// favorite a location
+document.getElementById('favoriteButton').onclick = function() {
+	$.ajax({
+    url:'/reports/' + reportId + '/',
+    type: "POST",
+    data: {reportId: 'reportId'},
+    success:function(response){},
+    complete:function(){},
+    error:function (xhr, textStatus, thrownError){}
+	});
+}
 
 
 
